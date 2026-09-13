@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleander Home Massage Services | Luxury Spa at Your Doorstep</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        :root {
+            --primary: #556B2F; /* Olive Green / Spa Vibe */
+            --primary-dark: #3f5022;
+            --accent: #D4AF37; /* Gold */
+            --bg-light: #F9F8F6;
+            --text-main: #2C2C2C;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @keyframes button-wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+        }
+
+        .btn-primary:hover,
+        .btn-accent:hover,
+        .btn-whatsapp:hover,
+        .btn-card-book:hover {
+            animation: button-wiggle 0.45s ease-in-out;
+        }
+
+        /* Hero Section */
+        header.hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            animation: hero-background-drift 18s ease-in-out infinite alternate;
+        }
+
+        header.hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,0.12) 50%, transparent 75%);
+            transform: translateX(-100%);
+            pointer-events: none;
+            animation: hero-light-sweep 9s ease-in-out infinite;
+        }
+
+        @keyframes hero-background-drift {
+            0% { background-position: 50% 50%; }
+            100% { background-position: 56% 46%; }
+        }
+
+        @keyframes hero-light-sweep {
+            0%, 35% { transform: translateX(-100%); }
+            65%, 100% { transform: translateX(100%); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+            animation: hero-content-rise 0.9s ease-out both;
+        }
+
+        @keyframes hero-content-rise {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f1f1f1;
+            animation: hero-content-rise 0.9s 0.18s ease-out both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: hero-content-rise 0.9s 0.34s ease-out both;
+        }
+
+        @keyframes hero-button-zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.06); }
+        }
+
+        .hero-buttons .btn-whatsapp,
+        .hero-buttons .btn-accent {
+            animation: hero-button-zoom 1.6s ease-in-out infinite alternate;
+        }
+
+        .hero-buttons .btn-accent {
+            animation-delay: 0.8s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            header.hero,
+            header.hero::after,
+            .hero-content,
+            .hero-content p,
+            .hero-buttons,
+            .hero-buttons .btn-whatsapp,
+            .hero-buttons .btn-accent,
+            .mini-walkers,
+            .mini-walker {
+                animation: none;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 8%;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-body {
+            padding: 25px;
+        }
+
+        .service-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .service-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .massage-types {
+            padding: 100px 8%;
+            background: #f3f4ee;
+        }
+
+        .massage-types .section-title {
+            margin-bottom: 45px;
+        }
+
+        .massage-types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .massage-type-card {
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .massage-type-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.1);
+        }
+
+        .massage-type-image {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .massage-type-body {
+            padding: 26px;
+        }
+
+        .massage-type-body h3 {
+            color: var(--primary-dark);
+            font-size: 1.45rem;
+            margin-bottom: 10px;
+        }
+
+        .massage-type-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .massage-type-book {
+            display: inline-block;
+            padding: 10px 18px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            border-radius: 2px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .massage-type-book:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .session-pricing {
+            margin-top: 80px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .pricing-card.popular {
+            border-color: #25D366;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #25D366;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 35px;
+            transform: rotate(45deg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-header-top {
+            padding: 30px 20px 20px;
+        }
+
+        .card-header-top h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .price-banner {
+            background: #f4f4f4;
+            padding: 25px 20px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #000;
+            line-height: 1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .price-amount .rs {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .travel-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .card-features {
+            padding: 30px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .card-footer {
+            padding: 0 30px 35px;
+        }
+
+        .btn-card-book {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d4a373;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .btn-card-book:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Service Areas Section */
+        .service-areas {
+            padding: 100px 8%;
+            background: var(--bg-light);
+        }
+
+        .service-areas .section-title {
+            margin-bottom: 45px;
+        }
+
+        .service-areas .section-title h2 {
+            color: var(--text-main);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 30px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .area-card {
+            background: var(--white);
+            min-height: 220px;
+            padding: 38px 22px 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+
+        .area-card i {
+            color: #cdbb98;
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+        }
+
+        .area-card h3 {
+            color: var(--text-main);
+            font-size: 1.25rem;
+            margin-bottom: 22px;
+        }
+
+        .area-book-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 22px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .area-book-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .mini-walkers {
+            position: fixed;
+            left: -90px;
+            bottom: 86px;
+            z-index: 1000;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            color: var(--primary);
+            pointer-events: none;
+            animation: mini-walk-across 24s linear infinite;
+        }
+
+        .mini-walker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.94);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.14);
+            animation: mini-walk-bob 0.65s ease-in-out infinite alternate;
+        }
+
+        .mini-walker i {
+            font-size: 1.2rem;
+        }
+
+        .mini-walker.female {
+            color: #b47a86;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes mini-walk-across {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(100vw + 180px)); }
+        }
+
+        @keyframes mini-walk-bob {
+            from { transform: translateY(1px); }
+            to { transform: translateY(-5px); }
+        }
+
+        /* Why Us Section */
+        .why-us {
+            padding: 100px 8%;
+            background-color: #f3f4ee;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Booking / Contact CTA */
+        .cta-section {
+            padding: 80px 8%;
+            background: linear-gradient(rgba(85, 107, 47, 0.9), rgba(85, 107, 47, 0.9)), url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .btn-accent:hover {
+            opacity: 0.9;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            left: 24px;
+            bottom: 24px;
+            z-index: 1100;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 14px 20px;
+            border-radius: 50px;
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            text-decoration: none;
+            font-weight: 700;
+            animation: floating-whatsapp-pulse 2.2s ease-in-out infinite;
+        }
+
+        .floating-whatsapp:hover {
+            background: #1eaf55;
+            color: var(--white);
+        }
+
+        @keyframes floating-whatsapp-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            padding: 40px 8%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 18px 0;
+        }
+
+        .footer-contact a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .massage-types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <i class="fa-solid spa-icon fa-spa"></i> Oleander Home Massage
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#service-areas">Service Areas</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#contact">Book Now</a></li>
+        </ul>
+        <a href="tel:+916364614493" class="btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Pure Luxury Relaxation, Delivered to Your Door</h1>
+            <p>Experience professional certified massage and wellness therapies in the comfort and privacy of your home.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/916364614493" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+                <a href="tel:+916364614493" class="btn-accent"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>Our Signature Therapies</h2>
+            <p>Tailored treatments designed to relieve stress, soothe muscles, and restore balance.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=600&q=80" alt="Swedish Massage" class="service-img">
+                <div class="service-body">
+                    <h3>Swedish Massage</h3>
+                    <p>Gentle, flowing strokes designed to melt away muscle tension, boost circulation, and calm your mind.</p>
+                    <div class="price">₹2,000 / 60 Mins</div>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Deep Tissue Massage" class="service-img">
+                <div class="service-body">
+                    <h3>Deep Tissue Therapy</h3>
+                    <p>Targeted pressure focusing on deeper muscle layers to release chronic stiffness, knots, and back pain.</p>
+                    <div class="price">₹2,500 / 60 Mins</div>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Aromatherapy" class="service-img">
+                <div class="service-body">
+                    <h3>Aromatherapy Healing</h3>
+                    <p>A soothing blend of organic botanical essential oils and gentle massage to balance energy and reduce anxiety.</p>
+                    <div class="price">₹3,000 / 60 Mins</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Massage Types Section -->
+        <section id="massage-types" class="massage-types">
+            <div class="section-title">
+                <h2>Massage For Everyone</h2>
+                <p>Choose the massage experience that feels right for you.</p>
+            </div>
+            <div class="massage-types-grid">
+                <article class="massage-type-card">
+                    <img src="https://images.pexels.com/photos/3997994/pexels-photo-3997994.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Male client receiving a male-to-male back massage" class="massage-type-image">
+                    <div class="massage-type-body">
+                        <h3>Male-to-Male Massage</h3>
+                        <p>Professional home massage focused on relaxation, muscle relief, and wellness.</p>
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20male-to-male%20massage." target="_blank" rel="noopener" class="massage-type-book">Book Now</a>
+                    </div>
+                </article>
+
+                <article class="massage-type-card">
+                    <img src="https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Female-to-female body massage" class="massage-type-image">
+                    <div class="massage-type-body">
+                        <h3>Female-to-Female Massage</h3>
+                        <p>A calming and restorative massage experience delivered in the comfort of your home.</p>
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20female-to-female%20massage." target="_blank" rel="noopener" class="massage-type-book">Book Now</a>
+                    </div>
+                </article>
+
+                <article class="massage-type-card">
+                    <img src="https://images.pexels.com/photos/6628690/pexels-photo-6628690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Female therapist giving a body massage to a male client" class="massage-type-image">
+                    <div class="massage-type-body">
+                        <h3>Unisex Massage</h3>
+                        <p>Female-to-male body massage with a professional, respectful, and wellness-focused approach.</p>
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20unisex%20massage." target="_blank" rel="noopener" class="massage-type-book">Book Now</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="session-pricing">
+            <div class="section-title">
+                <h2>Choose Your Session</h2>
+                <p>Enjoy a professional massage session in the comfort of your home.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="card-header-top">
+                        <h3>60 Min</h3>
+                    </div>
+                    <div class="price-banner">
+                        <div class="price-amount"><span class="rs">Rs</span>2000</div>
+                        <div class="travel-note">+ Two-Way Travel Charges</div>
+                    </div>
+                    <div class="card-features">
+                        <p>Quick Relaxation</p>
+                        <p>Stress Relief</p>
+                        <p>Energy Boost</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20the%2060Min%20session." target="_blank" rel="noopener" class="btn-card-book">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Popular</div>
+                    <div class="card-header-top">
+                        <h3>90 Min</h3>
+                    </div>
+                    <div class="price-banner">
+                        <div class="price-amount"><span class="rs">Rs</span>3000</div>
+                        <div class="travel-note">+ Two-Way Travel Charges</div>
+                    </div>
+                    <div class="card-features">
+                        <p>Deep Relaxation</p>
+                        <p>Muscle Recovery</p>
+                        <p>Balanced Wellness</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20the%2090Min%20session." target="_blank" rel="noopener" class="btn-card-book">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-header-top">
+                        <h3>120 Min</h3>
+                    </div>
+                    <div class="price-banner">
+                        <div class="price-amount"><span class="rs">Rs</span>4000</div>
+                        <div class="travel-note">+ Two-Way Travel Charges</div>
+                    </div>
+                    <div class="card-features">
+                        <p>Intensive Relief</p>
+                        <p>Total Rejuvenation</p>
+                        <p>Ultimate Wellness</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20the%20120Min%20session." target="_blank" rel="noopener" class="btn-card-book">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="service-areas" class="service-areas">
+        <div class="section-title">
+            <p>WE COME TO YOU</p>
+            <h2>Service Areas</h2>
+            <p>Our therapists travel to your home across these areas. Don't see your location? Give us a call and we may still be able to reach you.</p>
+        </div>
+        <div class="areas-grid">
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Whitefield</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Whitefield." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Mahadevapura</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Mahadevapura." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>KR Puram</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20KR%20Puram." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Indira Nagar</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Indira%20Nagar." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Marathahalli</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Marathahalli." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Varthur</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Varthur." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Jaya Nagar</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Jaya%20Nagar." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>BTM Layout</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20BTM%20Layout." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Koramangala</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Koramangala." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+            <div class="area-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Electronic City</h3>
+                <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20in%20Electronic%20City." target="_blank" rel="noopener" class="area-book-button">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="section-title">
+            <h2>The Oleander Experience</h2>
+            <p>Why hundreds of clients trust us for their home wellness routines.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-user-shield"></i>
+                <h3>Certified Therapists</h3>
+                <p>Highly trained, background-verified professional therapists carrying professional equipment.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-pump-soap"></i>
+                <h3>Hygienic & Safe</h3>
+                <p>Disposable linens, sanitized massage tables, and premium organic oils for a pristine spa experience.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-house-chimney-medical"></i>
+                <h3>Absolute Convenience</h3>
+                <p>Skip traffic and travel hassles. Transform your bedroom or living space into a private sanctuary.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section id="contact" class="cta-section">
+        <h2>Ready to Unwind?</h2>
+        <p>Book your doorstep wellness session now. Click below to connect with us instantly.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://wa.me/916364614493" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+            <a href="tel:+916364614493" class="btn-accent"><i class="fa-solid fa-phone"></i> Call Now</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/916364614493?text=Hi,%20I%20want%20to%20book%20a%20massage%20session." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Book via WhatsApp" title="Book via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <div class="mini-walkers" aria-hidden="true">
+        <span class="mini-walker male"><i class="fa-solid fa-person-walking"></i></span>
+        <span class="mini-walker female"><i class="fa-solid fa-person-dress"></i></span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Oleander Home Massage Services. All rights reserved.</p>
+        <div class="footer-contact">
+            <a href="tel:+916364614493"><i class="fa-solid fa-phone"></i> +91 63646 14493</a>
+            <a href="mailto:info@oleander.com"><i class="fa-solid fa-envelope"></i> info@oleander.com</a>
+            <span><i class="fa-solid fa-location-dot"></i> Electronic City, 560100</span>
+        </div>
+        <p>Designed for ultimate wellness & serenity at your doorstep.</p>
+    </footer>
+
+</body>
+</html>
